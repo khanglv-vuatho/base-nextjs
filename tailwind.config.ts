@@ -1,4 +1,7 @@
 import type { Config } from 'tailwindcss'
+const { colorsConfig } = require('./src/themes/color.ts')
+const { nextui } = require('@nextui-org/react')
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 const config: Config = {
   content: [
@@ -10,13 +13,32 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+      colors: colorsConfig,
+    },
+    screens: {
+      xs: '475px',
+      '13inch': '1350px',
+      '2xxl': '1700px',
+      '3xl': '1940px',
+      ...defaultTheme.screens,
     },
   },
-  plugins: [],
+  darkMode: 'class',
+  plugins: [
+    nextui({
+      themes: {
+        light: {
+          colors: {
+
+          },
+        },
+        dark: {
+          colors: {
+          
+          },
+        },
+      },
+    }),
+  ],
 }
 export default config
