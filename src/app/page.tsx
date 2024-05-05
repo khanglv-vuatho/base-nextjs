@@ -1,9 +1,3 @@
-import Hero from '@/components/Hero'
-
 export default function Home() {
-  return (
-    <div>
-      <Hero />
-    </div>
-  )
+  return <div className='p-10 text-2xl font-bold'>Welcome to CMS </div>
 }

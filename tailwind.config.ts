@@ -1,5 +1,4 @@
 import type { Config } from 'tailwindcss'
-const { colorsConfig } = require('./src/themes/color.ts')
 const { nextui } = require('@nextui-org/react')
 import defaultTheme from 'tailwindcss/defaultTheme'
 
@@ -13,7 +12,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: colorsConfig,
+      colors: {
+        'primary-blue': '#0d308c',
+      },
     },
     screens: {
       xs: '475px',
@@ -28,14 +29,10 @@ const config: Config = {
     nextui({
       themes: {
         light: {
-          colors: {
-
-          },
+          colors: {},
         },
         dark: {
-          colors: {
-          
-          },
+          colors: {},
         },
       },
     }),

@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { Providers } from '@/providers'
 import { ToastContainer } from 'react-toastify'
+import Sidebar from '@/components/Sidebar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +17,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='en'>
       <body className={inter.className}>
         <ToastContainer />
-        <Providers>{children}</Providers>
+        <Providers>
+          <div className='flex min-h-dvh'>
+            <div className='w-[20%] h-dvh bg-primary-blue text-white py-10 flex flex-col gap-10'>
+              <h1 className='text-3xl font-bold px-5'>CMS</h1>
+              <Sidebar />
+            </div>
+            <div className='w-[80%] min-h-dvh'>{children}</div>
+          </div>
+        </Providers>
       </body>
     </html>
   )

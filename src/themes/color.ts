@@ -2,7 +2,7 @@ import colorsTailwind from 'tailwindcss/colors'
 import { DefaultColors } from 'tailwindcss/types/generated/colors'
 
 type TColorsConfig = {
-  'primary-blue': '#3748A0'
+  'primary-blue': '#0d308c'
   'primary-blue-2': '#F1F6FF'
   'primary-blue-3': '#327EEE'
   'base-black': '#5A9DFF'
@@ -20,7 +20,7 @@ type TColorsConfig = {
 
 export const colorsConfig: TColorsConfig = {
   ...colorsTailwind,
-  'primary-blue': '#3748A0',
+  'primary-blue': '#0d308c',
   'primary-blue-2': '#F1F6FF',
   'primary-blue-3': '#327EEE',
   'base-black': '#5A9DFF',
